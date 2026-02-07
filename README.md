@@ -22,6 +22,7 @@ A simple railway e-ticketing demo built with Laravel and Eloquent ORM. It includ
 - PHP 7.3+ (XAMPP recommended)
 - MySQL running (XAMPP)
 - Composer installed
+- enabled extension=gd configured php.ini
 
 ## Setup
 1. Clone the repository:
@@ -60,21 +61,21 @@ php artisan storage:link
 php artisan view:clear
 ```
 
-9. Create mp0613_railway database
+7. Create mp0613_railway database
 
 
-10. Run migrations and seed the database
+8. Run migrations and seed the database
 
 ```bash
 php artisan migrate:fresh --seed
 ```
 
-11. Start the Laravel development server 
+9. Start the Laravel development server 
 
 ```bash
 php artisan serve
 ```
 
-12. You are all set
+10. You are all set
 
 
