@@ -155,9 +155,9 @@ startDate: new Date()
 					<div class="btn pull-right">
 					<form method="post" action="{{ Url('confirm-booking') }}">
 					@csrf
-				<input type="submit" class="btn btn-danger btn-lg" value="Confirm Booking">
+				<input type="submit" id="confirm-btn" class="btn btn-danger btn-lg" value="Confirm Booking">
 			</div>
-	<font color="red"><h1><center>&nbsp;&nbsp;&nbsp;&nbsp; Seat Selection</center> </h1></font>
+	<font color="green"><h1><center>&nbsp;&nbsp;&nbsp;&nbsp; Seat Selection</center> </h1></font>
 	
 
 					<div class="container">
@@ -286,6 +286,13 @@ $(function () {
         $('.items-collection .items').filter(function () {
             return $(this).text().match(new RegExp(pattern, 'i'));
         }).show();
+    });
+
+    $('input[type="checkbox"]').on('change', function () {
+        var anyChecked = $('input[type="checkbox"]:checked').length > 0;
+        $('#confirm-btn')
+            .toggleClass('btn-danger', !anyChecked)
+            .toggleClass('btn-success', anyChecked);
     });
 });
 </script>
